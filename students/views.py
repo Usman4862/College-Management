@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from students.models import Student
 from College import urls
 # Create your views here.
@@ -16,14 +16,44 @@ def add_student(request):
     if request.method == "GET":
         return render(request, "add_student.html")
     elif request.method == "POST":
-        add_student = Student()
-        add_student.first_name = request.POST["first_name"]
-        add_student.last_name = request.POST["last_name"]
-        add_student.date_of_birth = request.POST["dob"]
-        add_student.fee = request.POST["fee"]
-        add_student.student_class = request.POST["course"]
-        add_student.roll_number = request.POST["roll_number"]
+        first_name = request.POST["first_name"]
+        last_name = request.POST["last_name"]
+        date_of_birth = request.POST["date_of_birth"]
+        fee = request.POST["fee"]
+        roll_number = request.POST["roll_number"]
+        student_class = request.POST["student_class"]
+        if Student.id == roll_number:
+            return render(request, "error.html")
+        else:
+            student = Student.objects.create(
+                first_name=first_name,
+                last_name=last_name,
+                date_of_birth=date_of_birth,
+                fee=fee,
+                roll_number=roll_number,
+                student_class=student_class
+            )
+            student.save()
+            return redirect(reverse('student-list'))
+
+def delete_student(request, id):
+    student = Student.objects.get(id=id)
+    student.delete()
+    return redirect(reverse('student-list'))
+
+def view_student(request, id):
+    student = Student.objects.get(id=id)
+    context = {
+        'student' : student
+    }
+    return render(request, 'view_student.html', context=context)
         
-        add_student.save() # this query save the object data in database
-        return redirect('college/student/list')
+
+
+
+    
+
+
+
+        
     

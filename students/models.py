@@ -10,12 +10,13 @@ CLASS_CHOICES = [
     ("NM-P2", "NON-MEDICAL-Part2"),
 ]
 
+
 class Student(models.Model):
     first_name = models.TextField(max_length=30, null=False, blank=False)
     last_name = models.TextField(max_length=30, null=False, blank=False)
-    date_of_birth = models.DateField(null=False, blank=False, auto_now_add=False, auto_now=False )
+    date_of_birth = models.DateField(null=False, blank=False, auto_now_add=False, auto_now=False)
     student_class = models.CharField(max_length=6, choices=CLASS_CHOICES)
-    roll_number = models.PositiveSmallIntegerField(default=1, blank=False, null=False, unique=True) 
+    roll_number = models.PositiveSmallIntegerField(default=1, blank=False, null=False) 
     fee = models.BigIntegerField(blank=False, null=False)
     join = models.DateField(null=True, blank=True, auto_now_add=True)
     pass_matric = models.BooleanField(default=True)

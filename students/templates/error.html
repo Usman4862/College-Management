@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block title %}Error{% endblock title %}
+{% block style %}
+<style>
+    body {
+        background-color: #f2f2f2;
+      }
+      
+      .alert-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      .alert-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 300px;
+        background-color: white;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        transform-style: preserve-3d;
+        transform: perspective(800px) rotateX(30deg) rotateY(-10deg);
+      }
+      
+      .alert-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #d4d4d4;
+        transform: translateZ(-50px);
+      }
+      
+      h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      
+      p {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      label {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #d4d4d4;
+      }
+      
+      input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #0062cc;
+      }
+    
+</style>  
+{% endblock style %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Error</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="alert-container">
+      <div class="alert-box">
+        <h2>Error</h2>
+        <p>Please correct the errors in the form.</p>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock body %}
