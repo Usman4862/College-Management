@@ -22,7 +22,7 @@ def add_student(request):
         fee = request.POST["fee"]
         roll_number = request.POST["roll_number"]
         student_class = request.POST["student_class"]
-        if Student.id == roll_number: # this is high level suggest you to solve this issue and make a pull request and get honoured for the collaboration in my project.
+        if Student.objects.filter(roll_number=roll_number).exists(): 
             return render(request, "error.html")
         else:
             student = Student.objects.create(
