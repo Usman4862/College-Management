@@ -21,11 +21,6 @@ class Student(models.Model):
     join = models.DateField(null=True, blank=True, auto_now_add=True)
     pass_matric = models.BooleanField(default=True)
     
-    def __str__(self):
-        return f"{self.roll_number} - {self.first_name} - {self.last_name} - {self.join} - {self.student_class}"
-
-
-    
 
 
 
