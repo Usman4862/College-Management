@@ -10,13 +10,14 @@ class TeacherAdmin(admin.ModelAdmin):
     save_on_top= True
     save_as_continue= True
     save_as_bottom=False
-    search_fields= ['first_name', 'last_name', 'teacher_class', 'contact_number', 'teacher_id']
+    search_fields= ['first_name', 'last_name', 'teacher_class', 'contact_number']
     preserve_filters= True
     exclude= ['still_joined']
 
 @admin.register(Salary)
 class SalaryAdmin(admin.ModelAdmin):
-    list_display= ['paying_amount', 'paying_in_hours', 'current_month_amount', 'last_paid']
+    list_display= ['basic_salary', 'bank']
     save_on_top= True
-    search_fields= ['paying_amount']
+    search_fields= ['basic_salary', 'bank']
     preserver_filters= True
+    exclude= ['date_of_birth']
