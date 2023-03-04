@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    Add Teacher
+{% endblock title %}
+{% block body %}
+<style>
+    .teacher{
+        font-family: Verdana, sans-serif;
+        margin-top: 10px;
+        margin-left: 35%;
+        margin-bottom: 20px;
+        text-decoration: strong;
+    }.submit{
+        margin-top: 45px;
+        margin-left: 38%;
+        text-align: center;
+        background-color: #198754;
+        color: white;
+        padding-left: 120px;
+        padding-right: 120px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 25px;
+        font-family: Verdana, Arial, sans-serif;
+
+    }.drop{
+        width: auto;
+        margin-right: 50px;
+        padding-right: 100px;
+        text-align: center;
+        padding-left: 50px;
+    }
+</style>
+<div class= "teacher">
+    <h1><b><strong>Add Teacher</strong></b></h1>
+</div>
+<form action="" method="POST">
+    {% csrf_token %}
+        <div class="row">
+            <div class="col">
+            <input type="text" class="form-control" placeholder="First name" aria-label="First name" name= "first_name">
+            </div>
+            <div class="col">
+            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name= "last_name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            <input type="date" class="form-control" placeholder="Date of Birth" aria-label="Date of Brith" name= "date_of_birth">
+            </div>
+            <div class="col">
+            <input type="text" class="form-control" placeholder="Class" aria-label="Class" name= "class_">
+            </div>
+            <select class="drop">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+        </div>
+        </div>
+        <input type="submit" class="submit">
+{% endblock body %}
+    
