@@ -6,19 +6,19 @@
 ---
 - ### _**Homepage**_
 <p align="center">
-<img src="/home/usman/django_projects/College-Management/images/Screenshot from 2023-03-05 16-53-25.png" alt="pic" width="1000">
+<img src="images/Screenshot from 2023-03-05 16-53-25.png" alt="pic" width="1000">
 </p>
 
 - ### _**Students List**_
 
 <p align="center">
-<img src="/home/usman/django_projects/College-Management/images/Screenshot from 2023-03-05 16-56-14.png" alt="pic" width="1000">
+<img src="images/Screenshot from 2023-03-05 16-56-14.png" alt="pic" width="1000">
 </p>
 
 - ### _**Add Student**_
 
 <p align="center">
-<img src="/home/usman/django_projects/College-Management/images/Screenshot from 2023-03-05 16-56-52.png" alt="pic" width="1000">
+<img src="images/Screenshot from 2023-03-05 16-56-52.png" alt="pic" width="1000">
 </p>
 
 - ### _**View Student**_
