@@ -24,7 +24,7 @@
 - ### _**View Student**_
 
 <p align="center">
-<img src="/home/usman/django_projects/College-Management/images/Screenshot from 2023-03-05 17-01-47.png" alt="pic" width="1000">
+<img src="images/Screenshot from 2023-03-05 17-01-47.png" alt="pic" width="1000">
 </p>
 
 ---
