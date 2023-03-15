@@ -39,3 +39,5 @@ def view_teacher(request, id):
         "teacher" : teacher
     }
     return render(request, "view_teacher.html", context=context)
+
+# this is a comment

@@ -14,3 +14,5 @@ class StudentAdmin(admin.ModelAdmin):
     search_fields= ['first_name', 'last_name', 'student_class', 'roll_number']
     preserve_filters= True
     exclude= ['join', 'date_of_birth']
+
+    
